@@ -1,3 +1,13 @@
+@media screen and (min-width: 1600px) {
+  header,
+  section {
+    font-size: 20px !important;
+  }
+  .section-projects {
+    height: auto !important;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .line {
     width: 30px;

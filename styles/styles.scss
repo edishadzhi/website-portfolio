@@ -34,6 +34,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1em;
   background: $dark-color;
   position: fixed;
   z-index: 2;
@@ -51,7 +52,7 @@ header {
     justify-content: center;
     align-items: center;
     color: $white-color;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 
     a {
       text-decoration: none;
@@ -78,7 +79,6 @@ header {
   .nav-links li a {
     color: $white-color;
     text-decoration: none;
-    font-size: 1rem;
   }
 
   .nav-links li a:hover {
@@ -100,7 +100,7 @@ header {
     width: 100vw;
     background: url(../img/home-backgroundImg.jpg);
     background-repeat: no-repeat;
-    block-size: cover;
+    background-size: cover;
     background-attachment: fixed;
     min-height: 700px;
   }
