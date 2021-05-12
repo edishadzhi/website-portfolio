@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@4.0/dist/gumshoe.polyfills.min.js"></script>
     <title>Edis | Front-End Developer</title>
   </head>
   <body>
@@ -29,7 +30,7 @@
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <!-- <li><a href="#skills">Skills</a></li> -->
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -43,6 +44,7 @@
       <div class="container container-home">
         <h1>Hi, I'm <span>Edis</span></h1>
         <h3>I am a Front End Developer</h3>
+        <a class="btn-projects" href="#projects">My Projects</a>
         <div class="arrow-down">
           <a href="#about"><i class="fas fa-arrow-down fa-2x"></i></a>
         </div>
@@ -57,47 +59,22 @@
         <div class="about-text">
           <h2>About Me</h2>
           <p>
-            I live in Plovdiv, Bulgaria. I love learning new things and
-            polishing my existing skills which is why I fell for this field. I
-            want to build things that make a difference. Scroll down to check my
-            projects out, and if you want to work with me you can contact me at
-            <strong>edishadzhi@gmail.com</strong> or via the contact form below.
+            I'm a Front End Developer located in Bulgaria. I have a passion for
+            creating things that live on the internet.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="section-skills">
-      <h2 class="skills-heading">SKILLS</h2>
-      <div class="container container-skills">
-        <div class="skills-description">
-          <img src="./img/html.png" alt="html" class="skills-icons" />
-          <p>HTML5</p>
-        </div>
-        <div class="skills-description">
-          <img src="./img/css.png" alt="css" class="skills-icons" />
-          <p>CSS3</p>
-        </div>
-        <div class="skills-description">
-          <img src="./img/js.png" alt="js" class="skills-icons" />
-          <p>JavaScript</p>
-        </div>
-        <div class="skills-description">
-          <img
-            src="./img/react.png"
-            alt="react"
-            class="skills-icons react-icon"
-          />
-          <p>React</p>
-        </div>
-        <div class="skills-description">
-          <img src="./img/sass.svg" alt="sass" class="skills-icons" />
-          <p>Sass</p>
-        </div>
-        <div class="skills-description">
-          <img src="./img/bootstrap.png" alt="bootstrap" class="skills-icons" />
-          <p>Bootstrap</p>
+          <p>
+            Well-organised person who loves solving problems. Interested in the
+            entire spectrum of web development and working with positive people.
+          </p>
+          <p>Here are the technologies I specialize in:</p>
+          <ul class="about-skills">
+            <li>HTML5</li>
+            <li>React</li>
+            <li>CSS3</li>
+            <li>Sass</li>
+            <li>JavaScript</li>
+            <li>Bootstrap</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -107,119 +84,64 @@
       <div class="container">
         <div class="project">
           <img
-            src="./img/project-easybank.PNG"
+            src="./img/project-ignite.png"
             alt="project"
             class="project-image"
           />
           <div class="project-description">
             <p>
-              Recreated a landing page as close to the original design as
-              possible. Got better at following a real-life workflow. Also
-              decided to implement a mobile menu in order to give the project a
-              more professional look.
+              An app that showcases the most popular games right now, games that
+              are getting released soon, the ability to save the ones you like
+              and more..
             </p>
             <div class="links">
               <a
                 class="demo"
-                href="https://edishadzhi.github.io/easybank-landing-page/"
+                href="https://edishadzhi.github.io/ignite-games/"
                 target="_blank"
-                >DEMO</a
-              >
-              <a
-                class="code"
-                href="https://github.com/edishadzhi/easybank-landing-page"
-                target="_blank"
-                >CODE</a
+                >Visit Website</a
               >
             </div>
           </div>
         </div>
         <div class="project">
           <img
-            src="./img/project-mountainexpl.PNG"
+            src="./img/project-imagestore.png"
             alt="project"
             class="project-image"
           />
           <div class="project-description">
             <p>
-              Used the design of a popular Bootstrap theme as an inspiration to
-              create a unique design with Bootstrap and jQuery.
+              Image gallery app that allows you to upload photos and stores them
+              for you so you can revisit anytime you want!
             </p>
             <div class="links">
               <a
                 class="demo"
-                href="https://edishadzhi.github.io/mountain-explorers/"
+                href="https://edishadzhi.github.io/image-store/"
                 target="_blank"
-                >DEMO</a
-              >
-              <a
-                class="code"
-                href="https://github.com/edishadzhi/mountain-explorers"
-                target="_blank"
-                >CODE</a
+                >Visit Website</a
               >
             </div>
           </div>
         </div>
         <div class="project">
           <img
-            src="./img/project-weather.PNG"
+            src="./img/project-weather-forecast.png"
             alt="project"
             class="project-image"
           />
           <div class="project-description">
             <p>
-              Took a course on React, building a few projects coding along with
-              the tutor, but wanted to try something on my own. Made a simple
-              weather forecast app which fetches data from an API. Coding this
-              project allowed me to practise breaking the UI into a component
-              structure and to get a grasp on the unidirectional data flow
-              concept.
+              Weather forecast app with a focus on simplicity. Only the features
+              you need to get things done.
             </p>
             <div class="links">
               <a
                 class="demo"
                 href="https://edishadzhi.github.io/weather-forecast/"
                 target="_blank"
-                >DEMO</a
-              >
-              <a
-                class="code"
-                href="https://github.com/edishadzhi/weather-forecast"
-                target="_blank"
-                >CODE</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <img
-            src="./img/project-capitals.PNG"
-            alt="project"
-            class="project-image"
-          />
-          <div class="project-description">
-            <p>
-              Educational game in the form of a quizz built with Vanilla
-              JavaScript and Bootstrap. The app fetches data from an API and
-              receives a list of countries and their capitals. Then the user has
-              to answer which is the capital of a randomly picked country. If he
-              gets it wrong, the user will get to see the correct answer,
-              otherwise a paragraph will display that his answer is correct.
-              After 3 seconds the process will repeat itself.
-            </p>
-            <div class="links">
-              <a
-                class="demo"
-                href="https://edishadzhi.github.io/capitals-quiz/"
-                target="_blank"
-                >DEMO</a
-              >
-              <a
-                class="code"
-                href="https://github.com/edishadzhi/capitals-quiz"
-                target="_blank"
-                >CODE</a
+                >Visit Website</a
               >
             </div>
           </div>
@@ -250,6 +172,7 @@
       </div>
     </section>
 
-    <script src="app.js"></script>
+    <script src="hamburger.js"></script>
+    <script src="scrollspy.js"></script>
   </body>
 </html>

@@ -1,11 +1,9 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @media screen and (min-width: 1600px) {
   header,
   section {
     font-size: 20px !important;
-  }
-  .section-projects {
-    height: auto !important;
   }
 }
 
@@ -13,7 +11,7 @@
   .line {
     width: 30px;
     height: 3px;
-    background: white;
+    background: #ffffffff;
     margin: 5px;
   }
   nav {
@@ -81,8 +79,6 @@
     opacity: 1;
   }
   #projects {
-    height: 200vh;
-    min-height: 2200px;
     font-size: 15px;
   }
   .project {
@@ -113,13 +109,17 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 20vh 0vw;
+    padding: 10vh 0vw;
   }
   .about-text {
     width: 90% !important;
+    height: 60% !important;
+  }
+  .about-text h2 {
+    display: none;
   }
   .about-image {
-    height: 400px !important;
+    height: 40% !important;
     width: 200px !important;
   }
   .about-text {
@@ -137,8 +137,8 @@
   .section-home {
     font-size: 12px !important;
   }
-  #projects {
-    min-height: 2300px;
+  .about-text {
+    font-size: 0.95em;
   }
   .project-image {
     width: 100% !important;
@@ -146,23 +146,40 @@
   .project-description {
     width: 100% !important;
   }
+  .project-description .links {
+    width: 100%;
+  }
+  .project-description .links .demo {
+    width: 100%;
+    text-align: center;
+  }
   form {
     width: 100% !important;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .about-text h2 {
-    font-size: 2.2em !important;
+@media screen and (max-width: 500px) {
+  .section-home {
+    font-size: 10px !important;
   }
-  .container-skills {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2] !important;
-        grid-template-columns: repeat(2, 1fr) !important;
+  .section-home .container-home {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
   }
-  #projects {
-    min-height: 2500px;
+  .section-home .container-home .btn-projects:hover {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+  }
+  .section-home .container-home .arrow-down {
+    display: none !important;
+  }
+  .container-about {
+    padding: 8vh 0vw;
+  }
+  .container-about .about-text {
+    font-size: 0.9em;
+    margin-top: 4vh;
   }
   .section-contact {
     font-size: 14px;
@@ -170,18 +187,16 @@
 }
 
 @media screen and (max-width: 380px) {
-  .section-home {
-    font-size: 10px !important;
+  .about-image {
+    height: 35% !important;
+    width: 70% !important;
+    min-width: 150px;
   }
   .about-text {
     font-size: 14px !important;
   }
-  .about-text h2 {
-    display: none;
-  }
   #projects {
     font-size: 14.5px;
-    min-height: 2000px;
   }
   .project-image {
     height: auto !important;
@@ -189,6 +204,25 @@
   .contact-title {
     font-size: 3em !important;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .container-about {
+    padding: 2vh 0vw;
+  }
+  .container-about .about-image {
+    display: none;
+  }
+  .container-about .about-text {
+    height: 100% !important;
+    width: 100% !important;
+    font-size: 16px !important;
+    margin: 0;
+  }
+  .container-about .about-text .about-skills {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
   }
 }
 
@@ -297,6 +331,10 @@ header .nav-links li a:hover {
   color: #e94560;
 }
 
+header .nav-links li.active a {
+  color: #e94560;
+}
+
 .section-home {
   position: relative;
   background: #333;
@@ -340,7 +378,8 @@ header .nav-links li a:hover {
 }
 
 .section-home .container-home h1,
-.section-home .container-home h3 {
+.section-home .container-home h3,
+.section-home .container-home .btn-projects {
   z-index: 1;
 }
 
@@ -355,6 +394,30 @@ header .nav-links li a:hover {
 
 .section-home .container-home h3 {
   font-size: 2.5em;
+}
+
+.section-home .container-home .btn-projects {
+  width: 150px;
+  margin-top: 20px;
+  text-decoration: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  border: 3px solid #e94560;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffffff !important;
+  padding: 15px 20px;
+  border-radius: 6px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.section-home .container-home .btn-projects:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #e94560;
 }
 
 .section-home .container-home .arrow-down {
@@ -379,15 +442,18 @@ header .nav-links li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .section-about .container-about .about-image {
   height: 380px;
   width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .section-about .container-about .about-text {
-  margin-left: 5vw;
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -400,9 +466,6 @@ header .nav-links li a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .section-about .container-about .about-text h2 {
@@ -410,58 +473,33 @@ header .nav-links li a:hover {
   padding-bottom: 10px;
 }
 
-.section-about .container-about .about-text p,
-.section-about .container-about .about-text strong {
+.section-about .container-about .about-text p {
   font-size: 1em;
   color: #d6d9e0;
+  margin-bottom: 2.5vh;
 }
 
-.section-skills {
-  background-color: #16213e;
-  overflow-y: hidden;
-}
-
-.section-skills .skills-heading {
-  font-size: 2em;
-  letter-spacing: 5px;
-  text-align: center;
-  color: #e94560;
-}
-
-.section-skills .container-skills {
+.section-about .container-about .about-text .about-skills {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-columns: (minmax(140px, 200px))[2];
+      grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding-left: 1em;
+  font-size: 0.9em;
 }
 
-.section-skills .container-skills .skills-description {
-  text-align: center;
-  font-weight: 700;
-}
-
-.section-skills .container-skills .skills-description .skills-icons {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 15px;
-}
-
-.section-skills .container-skills .skills-description .react-icon {
-  width: 150px;
+.section-about .container-about .about-text .about-skills li::before {
+  content: "▹";
+  color: #e94560;
 }
 
 .section-projects {
   background-color: #0f3460;
-  height: 180vh;
-  min-height: 1400px;
+  height: auto;
 }
 
 .section-projects .project {
-  margin-top: 5vh;
+  margin: 10vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,19 +533,16 @@ header .nav-links li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.section-projects .links .demo,
-.section-projects .links .code {
-  margin: 20px 10px;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: 500;
+  width: 100%;
 }
 
 .section-projects .links .demo {
+  margin-top: 30px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
   background-color: transparent;
   border: 2px solid #e94560;
 }
@@ -517,19 +552,6 @@ header .nav-links li a:hover {
           animation: btn-to-red 0.4s ease-in;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.section-projects .links .code {
-  background-color: #1a1a2e;
-  border: 2px solid #1a1a2e;
-}
-
-.section-projects .links .code:hover {
-  -webkit-animation: btn-to-white 0.4s ease-in;
-          animation: btn-to-white 0.4s ease-in;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  color: #1a1a2e;
 }
 
 .section-contact {
@@ -658,20 +680,6 @@ header .nav-links li a:hover {
   to {
     background-color: #e94560;
     border: 2px solid #e94560;
-  }
-}
-
-@-webkit-keyframes btn-to-white {
-  to {
-    background-color: #ffffffff;
-    border: 2px solid #ffffffff;
-  }
-}
-
-@keyframes btn-to-white {
-  to {
-    background-color: #ffffffff;
-    border: 2px solid #ffffffff;
   }
 }
 /*# sourceMappingURL=styles.css.map */

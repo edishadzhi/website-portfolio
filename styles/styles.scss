@@ -84,9 +84,12 @@ header {
   .nav-links li a:hover {
     color: $contrast-color;
   }
+  .nav-links li.active a {
+    color: $contrast-color;
+  }
 }
 
-// HOME SECTION - background image, overlay, headings, arrow
+// HOME SECTION - background image, overlay, headings, button, arrow
 .section-home {
   position: relative;
   background: #333;
@@ -119,7 +122,8 @@ header {
     align-items: center;
 
     h1,
-    h3 {
+    h3,
+    .btn-projects {
       z-index: 1;
     }
 
@@ -132,6 +136,28 @@ header {
     }
     h3 {
       font-size: 2.5em;
+    }
+
+    .btn-projects {
+      width: 150px;
+      margin-top: 20px;
+      text-decoration: none;
+      outline: none;
+      background: transparent;
+      text-align: center;
+      border: 3px solid $contrast-color;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $white-color !important;
+      padding: 15px 20px;
+      border-radius: 6px;
+      transition: all 0.5s ease;
+    }
+
+    .btn-projects:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background-color: $contrast-color;
     }
 
     .arrow-down {
@@ -151,77 +177,54 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: space-around;
 
     .about-image {
       height: 380px;
       width: 300px;
+      object-fit: cover;
     }
 
     .about-text {
-      margin-left: 5vw;
       width: 50%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
 
       h2 {
         font-size: 4em;
         padding-bottom: 10px;
       }
 
-      p,
-      strong {
+      p {
         font-size: 1em;
         color: $subtle-color;
+        margin-bottom: 2.5vh;
+      }
+
+      .about-skills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        padding-left: 1em;
+        font-size: 0.9em;
+
+        li::before {
+          content: "▹";
+          color: $contrast-color;
+        }
       }
     }
   }
 }
 
-// SKILLS SECTION - grid of icons and text description
-.section-skills {
-  background-color: $medium-color;
-  overflow-y: hidden;
-
-  .skills-heading {
-    font-size: 2em;
-    letter-spacing: 5px;
-    text-align: center;
-    color: $contrast-color;
-  }
-
-  .container-skills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-
-    .skills-description {
-      text-align: center;
-      font-weight: 700;
-
-      .skills-icons {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 15px;
-      }
-      .react-icon {
-        width: 150px;
-      }
-    }
-  }
-}
-
-// PROJECTS SECTION - flexbox with images and text description + buttons
+// PROJECTS SECTION - flexbox with images and text description + button
 .section-projects {
   background-color: $light-color;
-  height: 180vh;
-  min-height: 1400px;
+  height: auto;
 
   .project {
-    margin-top: 5vh;
+    margin: 10vh 0;
     display: flex;
   }
   .project-image {
@@ -237,34 +240,24 @@ header {
     margin: 0 auto;
     padding-left: 30px;
   }
+
   .links {
     display: flex;
+    width: 100%;
 
-    .demo,
-    .code {
-      margin: 20px 10px;
-      padding: 15px 30px;
-      border-radius: 50px;
+    .demo {
+      margin-top: 30px;
+      padding: 10px 15px;
+      border-radius: 10px;
       text-decoration: none;
       cursor: pointer;
       font-weight: 500;
-    }
-    .demo {
       background-color: transparent;
       border: 2px solid $contrast-color;
-    }
-    .demo:hover {
-      animation: btn-to-red 0.4s ease-in;
-      animation-fill-mode: forwards;
-    }
-    .code {
-      background-color: $dark-color;
-      border: 2px solid $dark-color;
-    }
-    .code:hover {
-      animation: btn-to-white 0.4s ease-in;
-      animation-fill-mode: forwards;
-      color: $dark-color;
+      &:hover {
+        animation: btn-to-red 0.4s ease-in;
+        animation-fill-mode: forwards;
+      }
     }
   }
 }
@@ -279,6 +272,7 @@ header {
     justify-content: center;
     align-items: flex-start;
   }
+
   .contact-title {
     font-size: 3.5em;
   }
@@ -288,6 +282,7 @@ header {
     flex-direction: column;
     width: 50%;
   }
+
   input,
   textarea,
   .submit-btn {
@@ -300,15 +295,18 @@ header {
     border-radius: 5px;
     outline: none;
   }
+
   input::placeholder,
   textarea::placeholder {
     color: $subtle-color;
   }
+
   textarea {
     height: 25vh;
     resize: vertical;
     padding-top: 1.7rem;
   }
+
   .submit-btn {
     background-color: $dark-color;
     border: 1px solid $white-color;
@@ -318,6 +316,7 @@ header {
     text-transform: uppercase;
     cursor: pointer;
   }
+
   .submit-btn:hover {
     animation: btn-to-red 0.4s ease-in;
     animation-fill-mode: forwards;
@@ -337,17 +336,10 @@ header {
   }
 }
 
-// Keyframe buttons color animation
+// Keyframe button color animation
 @keyframes btn-to-red {
   to {
     background-color: $contrast-color;
     border: 2px solid $contrast-color;
-  }
-}
-
-@keyframes btn-to-white {
-  to {
-    background-color: $white-color;
-    border: 2px solid $white-color;
   }
 }
